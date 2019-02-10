@@ -1,6 +1,8 @@
 # Parlai101: Setting up a Visual Dialog Task with ParlAI
 
-This repo is an attempt to add a Visual Dialog annotation task using [ParlAI](https://github.com/facebookresearch/ParlAI) on Amazon Mechanical Turk. It supports having a dialog task about an image or a video with more than 2 participants.
+### Motivation
+
+Let's say you want to do cool research on [analyzing conversations](http://vene.ro/constructive/niculae16constructive.pdf) or [visually grounded language in the context of dialog](https://arxiv.org/abs/1611.08669) but you don't know where to start to collect your data. [ParlAI](http://multicomp.cs.cmu.edu/) is an excellent platform to the job. I thought this could be an excellent topic for our one and a half day hackathon at [MultiComp Lab](http://multicomp.cs.cmu.edu/). Since none of the example tasks provides a visual dialog annotation with multiple participants, I attempted to add a Visual Dialog annotation task. It supports having a dialog task about an image or a video with more than 2 participants.
 
 ![Person0](screenshots/person0.png)
 ![Person1](screenshots/person1.png)
@@ -37,11 +39,11 @@ Once you run the task pay attention to the command line prompt to follow instruc
 
 Probably the sample tasks I provide here are not taiolored to your needs. Here I list some pointers to the lines in the code where you might want to change for your specific needs.
 
-* *On boarding the participants*: Let's say you want to first give a step-by-step tutorial to your Turkers on how to complete the task. You need to uncomment the line [here]](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/run.py#L69) and you need to design a world [here](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/worlds.py#L28).
-* *Source of media*: Right know the source of media (e.g. [paths to images](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/worlds.py#L61) and [links to videos](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/worlds.py#L73)) are hardcoded. You need to do is load your sources before or during each conversation step and use them instead.
-* *Different kind of media*: If you need to use a different kind of media, you need to add an html in [person0_index.html](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/html/person0_index.html#L11) and also edit the javascript to set the source of media like I did it for [image](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/html/person0_index.html#L83) and [video](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/html/person0_index.html#L92).
-* *Many participants* : If all participants share the same frontend all you have to do is copy link `visual_dialog/html/person0_index.html` as many times to `visual_dialog/html/person<# of participants>_index.html`. Right now I assumed there are only two Turkers thats why we only have one more soft linked file.
-
+* **On boarding the participants:** Let's say you want to first give a step-by-step tutorial to your Turkers on how to complete the task. You need to uncomment the line [here]](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/run.py#L69) and you need to design a world [here](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/worlds.py#L28).
+* **Source of media:** Right know the source of media (e.g. [paths to images](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/worlds.py#L61) and [links to videos](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/worlds.py#L73)) are hardcoded. You need to do is load your sources before or during each conversation step and use them instead.
+* **Different kind of media:** If you need to use a different kind of media, you need to add an html in [person0_index.html](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/html/person0_index.html#L11) and also edit the javascript to set the source of media like I did it for [image](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/html/person0_index.html#L83) and [video](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/html/person0_index.html#L92).
+* **Many participants:** If all participants share the same frontend all you have to do is copy link `visual_dialog/html/person0_index.html` as many times to `visual_dialog/html/person<# of participants>_index.html`. Right now I assumed there are only two Turkers thats why we only have one more soft linked file.
+* **Recorded Data:** Write now the conversation data is stored in a pickle file as a list of tuples. None of these choices are optimal. You may want to change [what you record](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/worlds.py#L93) and [the way you record](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/worlds.py#L153) the data to a json format.
 
 
 ## What's Missing
