@@ -83,10 +83,7 @@ def main():
 
     def run_conversation(mturk_manager, opt, workers):
       # Create mturk agents
-      mturk_agent_1 = workers[0]
-      mturk_agent_2 = workers[1]
-
-      agents = [mturk_agent_1, mturk_agent_2]
+      agents = workers
       if opt["use_local_human"]:
         # Create the local human agents
         human_agent_1 = LocalHumanAgent(opt={})

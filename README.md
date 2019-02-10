@@ -35,6 +35,15 @@ Once you run the task pay attention to the command line prompt to follow instruc
 
 ## Customizing a Task
 
+Probably the sample tasks I provide here are not taiolored to your needs. Here I list some pointers to the lines in the code where you might want to change for your specific needs.
+
+* *On boarding the participants*: Let's say you want to first give a step-by-step tutorial to your Turkers on how to complete the task. You need to uncomment the line [here]](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/run.py#L69) and you need to design a world [here](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/worlds.py#L28).
+* *Source of media*: Right know the source of media (e.g. [paths to images](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/worlds.py#L61) and [links to videos](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/worlds.py#L73)) are hardcoded. You need to do is load your sources before or during each conversation step and use them instead.
+* *Different kind of media*: If you need to use a different kind of media, you need to add an html in [person0_index.html](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/html/person0_index.html#L11) and also edit the javascript to set the source of media like I did it for [image](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/html/person0_index.html#L83) and [video](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/html/person0_index.html#L92).
+* *Many participants* : If all participants share the same frontend all you have to do is copy link `visual_dialog/html/person0_index.html` as many times to `visual_dialog/html/person<# of participants>_index.html`. Right now I assumed there are only two Turkers thats why we only have one more soft linked file.
+
+
+
 ## What's Missing
 
 The tasks I provide here are a result of ducttaping existing two tasks on the ParlAI repository. So, they miss a lot of features. A short list as follows:
@@ -42,3 +51,4 @@ The tasks I provide here are a result of ducttaping existing two tasks on the Pa
 * Media (i.e. image or the video) shows after participants salute each other. This is a simple bug that can easily be fixed, but I did not have time.
 * As in [Image Chat task here](https://github.com/facebookresearch/ParlAI/blob/master/parlai/mturk/tasks/image_chat/image_chat_collection/worlds.py#L278), we can add a simple check to catch offensive language.
 * Right now there is no check whether the dialog is successful or not. Again as in [here](https://github.com/facebookresearch/ParlAI/blob/master/parlai/mturk/tasks/image_chat/image_chat_collection/worlds.py#L335), we can check the status of Turkers to determine whether the dialog is successful.
+* You probably want your Turkers to have some specific qualities to be eligible for your task but unfortunately I could not find a good example on how to do this, but [this is the starting point](https://github.com/volkancirik/parlai101/blob/master/visual_dialog/run.py#L72).
