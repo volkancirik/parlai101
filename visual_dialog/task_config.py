@@ -34,6 +34,6 @@ and on the left side of the chat page. Supports HTML formatting.
 """
 task_config['task_description'] = \
     '''
-In this task, you are going to chat with other people. If you are ready, please click "Accept HIT" to start this task. To end the chat type [DONE]. //Take a look at task_config.py to edit this description'''
+In this task, you are going to chat with other people. If you are ready, please click "Accept HIT" to start this task. To end the chat type [DONE]. Take a look at task_config.py to edit this description'''
 
 task_config['frame_height'] = 600
