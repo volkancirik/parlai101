@@ -9,14 +9,14 @@ To be able to run and test the tasks on MTurk, you need at least one Amazon acco
 
 ## Running a Task
 
-Once you successfully create the accounts and do the installation, copy or soft link `visual_dialog` folder to `~/ParlAI/parlai/mturk/tasks`.
+First, make sure that you thoroughly read [ParlAI's MTurk document](http://parl.ai/static/docs/tutorial_mturk.html). Once you successfully create the accounts and do the installation, copy or soft link this repository's `visual_dialog` folder to `~/ParlAI/parlai/mturk/tasks`.
 Run following commands to see command line options:
 
     source activate parlai
     cd ~/ParlAI/parlai/mturk/tasks
     python run.py  --help
 
-The options I added to the examples [Multi Agent Dialog](https://github.com/facebookresearch/ParlAI/tree/ee6111f159afbb21f6af47309b9ef94c971c6029/parlai/mturk/tasks/multi_agent_dialog) and [Persona Chat](https://github.com/facebookresearch/ParlAI/tree/ee6111f159afbb21f6af47309b9ef94c971c6029/parlai/mturk/tasks/personachat) as follows:
+The options I added to the examples [Multi Agent Dialog](https://github.com/facebookresearch/ParlAI/tree/master/parlai/mturk/tasks/multi_agent_dialog) and [Image Chat](https://github.com/facebookresearch/ParlAI/tree/master/parlai/mturk/tasks/image_chat) as follows:
 
     --use-local-human  Use local human agent (default: False) # Whether or not to use local human agent during annotation.
     --sample-task SAMPLE_TASK
@@ -27,3 +27,4 @@ The options I added to the examples [Multi Agent Dialog](https://github.com/face
 		   (default: image_dialog2)
     --participants PARTICIPANTS
                         # of participants (default: 2) # The number of Turkers to participate in the conversation.
+
