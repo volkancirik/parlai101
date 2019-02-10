@@ -17,6 +17,7 @@ Run following commands to see command line options:
     python run.py  --help
 
 The options I added to the examples [Multi Agent Dialog](https://github.com/facebookresearch/ParlAI/tree/ee6111f159afbb21f6af47309b9ef94c971c6029/parlai/mturk/tasks/multi_agent_dialog) and [Persona Chat](https://github.com/facebookresearch/ParlAI/tree/ee6111f159afbb21f6af47309b9ef94c971c6029/parlai/mturk/tasks/personachat) as follows:
+
     --use-local-human  Use local human agent (default: False) # Whether or not to use local human agent during annotation.
     --sample-task SAMPLE_TASK
 		  image_dialog1  # Participants all see the same image and have a conversation about it.
@@ -24,5 +25,5 @@ The options I added to the examples [Multi Agent Dialog](https://github.com/face
 		  video_dialog   # Participants all see the same Youtube video and have a conversation about it.
 		  video_dialog2  # Participants all see different Youtube videos and have a conversation about it.
 		   (default: image_dialog2)
-  --participants PARTICIPANTS
+    --participants PARTICIPANTS
                         # of participants (default: 2) # The number of Turkers to participate in the conversation.
