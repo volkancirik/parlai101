@@ -27,7 +27,7 @@ def main():
   argparser.add_argument('--use-local-human', action='store_true',
                          default=False, help='Use local human agent')
   argparser.add_argument('--sample-task', type=str,
-                         default="image_dialog2", help='task types dialog|image_dialog1|image_dialog2|video_dialog|video_dialog2 default: image_dialog2')
+                         default="image_dialog2", help='task types dialog|image_dialog1|image_dialog2|video_dialog|video_dialog2')
   argparser.add_argument('--participants', default=2, type=int,
                          help='# of participants')
 
